@@ -8,5 +8,14 @@
 			</h1>
 		</section>
 	</aside>
+	<div class="span6">
+		<% if @user.microposts.any? %>
+			<h3>Micropost (<%= @user.micropost.count %>)</h3>
+			<ol class="micropost">
+				 <%= render @microposts%>
+			</ol>
+				<%= will_paginate @microposts %>
+		<% end %>
+	</div>
 </div>
 
